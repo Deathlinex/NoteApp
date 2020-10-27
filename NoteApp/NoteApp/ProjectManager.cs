@@ -20,10 +20,9 @@ namespace NoteApp
         /// </summary>
         public static void SaveToFile(Project project, string path)
         {
-            Directory.CreateDirectory(path);
             path += FileName;
+            Directory.CreateDirectory(path);
             JsonSerializer serializer = new JsonSerializer();
-
             using (StreamWriter sw = new StreamWriter(path))
             using (JsonTextWriter writer = new JsonTextWriter(sw))
             {
@@ -37,10 +36,8 @@ namespace NoteApp
         public static Project LoadFromFile(string path)
         {
             path += FileName;
-
             Project project;
             JsonSerializer serializer = new JsonSerializer();
-
             using (StreamReader sr = new StreamReader(path))
             using (JsonTextReader reader = new JsonTextReader(sr))
             {
