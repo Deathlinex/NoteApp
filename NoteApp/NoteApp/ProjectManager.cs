@@ -44,14 +44,10 @@ namespace NoteApp
                 using (JsonTextReader reader = new JsonTextReader(sr))
 
                     project = (Project) serializer.Deserialize<Project>(reader);
-                if (project == null)
-                {
-                    project = new Project();
-                }
             }
             catch
             {
-                throw new ArgumentException("Ошибка загрузки файла ");
+                project = new Project();
             }
 
             return project;
