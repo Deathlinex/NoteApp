@@ -20,8 +20,8 @@ namespace NoteApp
         /// </summary>
         public static void SaveToFile(Project project, string path)
         {
-            path += FileName;
             Directory.CreateDirectory(path);
+            path += FileName;
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter(path))
             using (JsonTextWriter writer = new JsonTextWriter(sw))
