@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace NoteApp
 {
     /// <summary>
@@ -15,24 +16,27 @@ namespace NoteApp
         /// Название заметки.
         /// </summary>
         private string _name;
+
         /// <summary>
         /// Текст заметки.
         /// </summary>
         private string _text;
+
         /// <summary>
         /// Время создания заметки.
         /// </summary>
-        private readonly DateTime _timeOfCreation = DateTime.Now;
+        private readonly DateTime _create = DateTime.Now;
+
         /// <summary>
         /// Время изменения заметки.
         /// </summary>
-        private DateTime _timeOfEdit = DateTime.Now;
+        private DateTime _modify = DateTime.Now;
+
         /// <summary>
         /// Категории заметок.
         /// </summary>
         private NoteCategory _category;
-        //private string _category2;
-
+        
         /// <summary>
         /// Свойство названия заметки.
         /// </summary>
@@ -56,29 +60,7 @@ namespace NoteApp
             }
         }
 
-        /*  public string Category2
-          {
-              get { return _category2; }
-              set
-              {
-                  if ((value == "Работа")||(value == "Дом")||(value == "Здоровье и спорт")||(value == "Люди")||(value == "Документы")||(value =="Финансы")||(value == "Другое"))
-                  {
-                      _category2 = value;
-                      EditTime = DateTime.Now;
-                  }
-                  else
-                  {
-                      throw new ArgumentException("Не корректное название категории.");
-                  }
-
-              }
-          }
-         */
-
-        /// <summary>
-        /// Свойство категорий заметок.
-        /// </summary>
-        public NoteCategory Category
+            public NoteCategory Category
         {
             get { return _category; }
             set
@@ -106,7 +88,7 @@ namespace NoteApp
         /// </summary>
         public DateTime TimeOfCreation
         {
-            get { return _timeOfCreation; }
+            get { return _create; }
         }
 
         /// <summary>
@@ -114,10 +96,10 @@ namespace NoteApp
         /// </summary>
         public DateTime TimeOfEdit
         {
-            get { return _timeOfEdit; }
+            get { return _modify; }
             set
             {
-                _timeOfEdit = DateTime.Now;
+                _modify = DateTime.Now;
             }
         }
 
