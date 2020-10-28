@@ -38,16 +38,23 @@ namespace NoteApp
             path += FileName;
             Project project;
             JsonSerializer serializer = new JsonSerializer();
-            using (StreamReader sr = new StreamReader(path))
-            using (JsonTextReader reader = new JsonTextReader(sr))
+            try
             {
-                project = (Project)serializer.Deserialize<Project>(reader);
+                using (StreamReader sr = new StreamReader(path))
+                using (JsonTextReader reader = new JsonTextReader(sr))
+
+                    project = (Project) serializer.Deserialize<Project>(reader);
                 if (project == null)
                 {
                     project = new Project();
                 }
-                return project;
             }
+            catch
+            {
+                throw new ArgumentException("Ошибка загрузки файла ");
+            }
+
+            return project;
         }
     }
 }
