@@ -60,7 +60,16 @@ namespace NoteApp
             }
         }
 
-            public NoteCategory Category
+        public Note()
+        {
+            _name = "";
+            _category = NoteCategory.Other;
+            _text = "";
+            _create = DateTime.Now;
+            _modify = DateTime.Now;
+        }
+
+        public NoteCategory Category
         {
             get { return _category; }
             set

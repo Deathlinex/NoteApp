@@ -59,5 +59,35 @@ namespace NoteAppUI.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap add_text_notes_icon_icons_com_71526 {
+            get {
+                object obj = ResourceManager.GetObject("add-text-notes_icon-icons.com_71526", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cancel_text_icon_icons_com_71506 {
+            get {
+                object obj = ResourceManager.GetObject("cancel-text_icon-icons.com_71506", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap notes_edit_button_icon_icons_com_71407 {
+            get {
+                object obj = ResourceManager.GetObject("notes-edit-button_icon-icons.com_71407", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
