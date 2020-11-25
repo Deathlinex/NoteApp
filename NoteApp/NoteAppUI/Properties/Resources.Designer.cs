@@ -63,9 +63,9 @@ namespace NoteAppUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap add_text_notes_icon_icons_com_71526 {
+        internal static System.Drawing.Bitmap AddButton {
             get {
-                object obj = ResourceManager.GetObject("add-text-notes_icon-icons.com_71526", resourceCulture);
+                object obj = ResourceManager.GetObject("AddButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace NoteAppUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cancel_text_icon_icons_com_71506 {
+        internal static System.Drawing.Bitmap EditButton {
             get {
-                object obj = ResourceManager.GetObject("cancel-text_icon-icons.com_71506", resourceCulture);
+                object obj = ResourceManager.GetObject("EditButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace NoteAppUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap notes_edit_button_icon_icons_com_71407 {
+        internal static System.Drawing.Bitmap СancelButton {
             get {
-                object obj = ResourceManager.GetObject("notes-edit-button_icon-icons.com_71407", resourceCulture);
+                object obj = ResourceManager.GetObject("СancelButton", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
