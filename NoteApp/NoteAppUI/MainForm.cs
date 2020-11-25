@@ -11,28 +11,20 @@ using NoteApp;
 
 namespace NoteAppUI
 {
-    
+
     public partial class MainForm : Form
     {
         // Список заметок, которые необходимо отобразить на форме.
-        private Project _dataList;
+        private Project _project;
 
         public MainForm()
         {
             InitializeComponent();
 
-            _dataList = ProjectManager.LoadFromFile();
-            if (_dataList == null)
-               _dataList = new Project();
+            _project = ProjectManager.LoadFromFile();
             UpdateNotesListBox();
 
-            CategoryComboBox.Items.Add(NoteCategory.Documents);
-            CategoryComboBox.Items.Add(NoteCategory.Finances);
-            CategoryComboBox.Items.Add(NoteCategory.HealthAndSport);
-            CategoryComboBox.Items.Add(NoteCategory.Home);
-            CategoryComboBox.Items.Add(NoteCategory.Other);
-            CategoryComboBox.Items.Add(NoteCategory.People);
-            CategoryComboBox.Items.Add(NoteCategory.Work);
+            CategoryComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
 
             ChangeVisiblePanel(false);
         }
@@ -43,19 +35,19 @@ namespace NoteAppUI
         private void UpdateNotesListBox()
         {
             NotesListBox.Items.Clear();
-            if (_dataList != null)
-            {
-                for (int i = 0; i < _dataList.Notes.Count; i++)
-                {
-                    if (_dataList.Notes[i].Name != "")
-                        NotesListBox.Items.Add(_dataList.Notes[i].Name);
-                    else
-                        NotesListBox.Items.Add("Без названия");
-                }
 
+            for (int i = 0; i < _project.Notes.Count; i++)
+            {
+                if (_project.Notes[i].Name != "")
+                    NotesListBox.Items.Add(_project.Notes[i].Name);
+                else
+                    NotesListBox.Items.Add("Без названия");
             }
         }
-        
+
+        /// <summary>
+        /// Добавление заметки.
+        /// </summary>
         private void AddNote()
         {
             var addForm = new NoteForm();
@@ -63,17 +55,20 @@ namespace NoteAppUI
 
             if (addForm.DialogResult == DialogResult.OK)
             {
-                var addedNote = addForm.NoteData;
+                var addedNote = addForm.Note;
 
-                _dataList.Notes.Add(addedNote);
+                _project.Notes.Add(addedNote);
                 NotesListBox.Items.Add(addedNote);
                 UpdateNotesListBox();
             }
             else return;
 
-            ProjectManager.SaveToFile(_dataList);
+            ProjectManager.SaveToFile(_project);
         }
-        
+
+        /// <summary>
+        /// Редактирование заметки.
+        /// </summary>
         private void EditNote()
         {
             var selectedIndex = NotesListBox.SelectedIndex;
@@ -83,34 +78,30 @@ namespace NoteAppUI
                 return;
             }
 
-            try
+            var selectedNote = _project.Notes[selectedIndex];
+
+            var editForm = new NoteForm();
+            editForm.Note = selectedNote;
+            editForm.ShowDialog();
+
+            if (editForm.DialogResult == DialogResult.OK)
             {
-                var selectedNote = _dataList.Notes[selectedIndex];
+                var editedNote = editForm.Note;
 
-                var editForm = new NoteForm();
-                editForm.NoteData = selectedNote;
-                editForm.ShowDialog();
-
-                if (editForm.DialogResult == DialogResult.OK)
-                {
-                    var editedNote = editForm.NoteData;
-
-                    _dataList.Notes.Insert(selectedIndex, editedNote);
-                    NotesListBox.Items.Insert(selectedIndex, editedNote.Name);
-                    _dataList.Notes.RemoveAt(selectedIndex + 1);
-                    UpdateNotesListBox();
-                    NotesListBox.SetSelected(selectedIndex, true);
-                }
-                else return;
+                _project.Notes.RemoveAt(selectedIndex);
+                _project.Notes.Insert(selectedIndex, editedNote);
+                NotesListBox.Items.Insert(selectedIndex, editedNote.Name);
+                UpdateNotesListBox();
+                NotesListBox.SetSelected(selectedIndex, true);
             }
-            catch
-            {
-                MessageBox.Show("Запись не найдена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else return;
 
-            ProjectManager.SaveToFile(_dataList);
+            ProjectManager.SaveToFile(_project);
         }
-                
+
+        /// <summary>
+        /// Удаление заметки.
+        /// </summary>
         private void RemoveNote()
         {
             var selectedIdex = NotesListBox.SelectedIndex;
@@ -123,12 +114,12 @@ namespace NoteAppUI
             var dialogResult = MessageBox.Show("Вы дейcтвительно хотите удалить запись?", "Удаление записи", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.OK)
             {
-                _dataList.Notes.RemoveAt(selectedIdex);
+                _project.Notes.RemoveAt(selectedIdex);
                 UpdateNotesListBox();
             }
 
             ChangeVisiblePanel(false);
-            ProjectManager.SaveToFile(_dataList);
+            ProjectManager.SaveToFile(_project);
         }
 
         /// <summary>
@@ -136,12 +127,7 @@ namespace NoteAppUI
         /// </summary>
         private void ChangeVisiblePanel(bool isVisible)
         {
-            TitleLabel.Visible = isVisible;
-            CategoryLabel.Visible = isVisible;
-            CreatedTimeLabel.Visible = isVisible;
-            CreatedDateTimePicker.Visible = isVisible;
-            ModifiedTimeLabel.Visible = isVisible;
-            ModifiedDateTimePicker.Visible = isVisible;
+            InfoPanel.Visible = isVisible;
         }
 
         /// <summary>
@@ -149,11 +135,9 @@ namespace NoteAppUI
         /// </summary>
         private void NotesListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             try
             {
-                var selectedNote = _dataList.Notes[NotesListBox.SelectedIndex];
-
+                var selectedNote = _project.Notes[NotesListBox.SelectedIndex];
                 if (selectedNote.Name != "")
                     TitleLabel.Text = selectedNote.Name;
                 else
@@ -173,52 +157,45 @@ namespace NoteAppUI
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ProjectManager.SaveToFile(_project);
             Close();
         }
 
-        
         private void AddNoteMainMenuStrip_Click(object sender, EventArgs e)
         {
             AddNote();
         }
 
-        
         private void EditNoteMainMenuStrip_Click(object sender, EventArgs e)
         {
             EditNote();
         }
 
-        
         private void RemoveNoteMainMenuStrip_Click(object sender, EventArgs e)
         {
             RemoveNote();
         }
 
-        
         private void aboutMainMenuStrip_Click(object sender, EventArgs e)
         {
             var aboutForm = new AboutForm();
             aboutForm.Show();
         }
 
-        
         private void AddButton_Click(object sender, EventArgs e)
         {
             AddNote();
         }
 
-        
         private void EditButton_Click(object sender, EventArgs e)
         {
             EditNote();
         }
 
-        
         private void RemoveButton_Click(object sender, EventArgs e)
         {
             RemoveNote();
         }
 
-        
     }
 }

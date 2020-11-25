@@ -11,23 +11,23 @@ using NoteApp;
 
 namespace NoteAppUI
 {
-    
+
     public partial class NoteForm : Form
     {
-        private Note _noteData = new Note();
+        private Note _note = new Note();
 
         /// <summary>
         /// Возвращает и задает данные формы
         /// </summary>
-        public Note NoteData
+        public Note Note
         {
             get
             {
-                return _noteData;
+                return _note;
             }
             set
             {
-                _noteData = (Note)value.Clone();
+                _note = (Note)value.Clone();
                 DisplayNote();
             }
         }
@@ -36,13 +36,7 @@ namespace NoteAppUI
         {
             InitializeComponent();
 
-            CategoryComboBox.Items.Add(NoteCategory.Documents);
-            CategoryComboBox.Items.Add(NoteCategory.Finances);
-            CategoryComboBox.Items.Add(NoteCategory.HealthAndSport);
-            CategoryComboBox.Items.Add(NoteCategory.Home);
-            CategoryComboBox.Items.Add(NoteCategory.Other);
-            CategoryComboBox.Items.Add(NoteCategory.People);
-            CategoryComboBox.Items.Add(NoteCategory.Work);
+            CategoryComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
         }
 
         /// <summary>
@@ -50,30 +44,30 @@ namespace NoteAppUI
         /// </summary>
         public void DisplayNote()
         {
-            if (_noteData == null)
+            if (_note == null)
             {
                 CreatedDateTimePicker.Value = DateTime.Now;
                 ModifiedDateTimePicker.Value = DateTime.Now;
                 return;
             }
 
-            TitleTextBox.Text = _noteData.Name;
-            CategoryComboBox.SelectedItem = _noteData.Category;
-            TextBox.Text = _noteData.Text;
-            CreatedDateTimePicker.Value = _noteData.TimeOfCreation;
-            ModifiedDateTimePicker.Value = _noteData.TimeOfEdit;
+            TitleTextBox.Text = _note.Name;
+            CategoryComboBox.SelectedItem = _note.Category;
+            TextBox.Text = _note.Text;
+            CreatedDateTimePicker.Value = _note.TimeOfCreation;
+            ModifiedDateTimePicker.Value = _note.TimeOfEdit;
         }
-        
+
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
-                _noteData.Name = TitleTextBox.Text;
+                _note.Name = TitleTextBox.Text;
             }
             catch (Exception exceptionText)
             {
                 MessageBox.Show(exceptionText.Message, "Превышение длины строки", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                TitleTextBox.Text = _noteData.Name;
+                TitleTextBox.Text = _note.Name;
             }
         }
 
@@ -83,20 +77,20 @@ namespace NoteAppUI
         private void CategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CategoryComboBox.SelectedIndex == -1) return;
-            this._noteData.Category = (NoteCategory)CategoryComboBox.SelectedItem;
+            this._note.Category = (NoteCategory)CategoryComboBox.SelectedItem;
         }
-        
+
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
-            _noteData.Text = TextBox.Text;
+            _note.Text = TextBox.Text;
         }
-        
+
         private void OKButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-        
+
         private void CancelButton_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;

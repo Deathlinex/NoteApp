@@ -42,13 +42,18 @@ namespace NoteApp
         public static Project LoadFromFile()
         {
             JsonSerializer serializer = new JsonSerializer();
-            Project project = null;
+            Project project;
 
             CheckFile();
-            using (StreamReader sr = new StreamReader(_defaultPath))
-            using (JsonReader reader = new JsonTextReader(sr))
+            try
             {
-                project = (Project)serializer.Deserialize<Project>(reader);
+                using (StreamReader sr = new StreamReader(_defaultPath))
+                using (JsonReader reader = new JsonTextReader(sr))
+                    project = (Project) serializer.Deserialize<Project>(reader);
+            }
+            catch
+            {
+                project = new Project();
             }
 
             return project;

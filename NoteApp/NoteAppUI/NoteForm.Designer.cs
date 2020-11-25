@@ -55,7 +55,7 @@
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(2, 2);
+            this.TitleLabel.Location = new System.Drawing.Point(2, 5);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(30, 13);
@@ -85,7 +85,7 @@
             // ModifiedDateLabel
             // 
             this.ModifiedDateLabel.AutoSize = true;
-            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 59);
+            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 57);
             this.ModifiedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedDateLabel.Name = "ModifiedDateLabel";
             this.ModifiedDateLabel.Size = new System.Drawing.Size(50, 13);
@@ -95,7 +95,7 @@
             // CreatedDateTimePicker
             // 
             this.CreatedDateTimePicker.Enabled = false;
-            this.CreatedDateTimePicker.Location = new System.Drawing.Point(58, 54);
+            this.CreatedDateTimePicker.Location = new System.Drawing.Point(58, 53);
             this.CreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.CreatedDateTimePicker.Name = "CreatedDateTimePicker";
             this.CreatedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -104,7 +104,7 @@
             // ModifiedDateTimePicker
             // 
             this.ModifiedDateTimePicker.Enabled = false;
-            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(244, 57);
+            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(244, 53);
             this.ModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.ModifiedDateTimePicker.Name = "ModifiedDateTimePicker";
             this.ModifiedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -154,10 +154,10 @@
             // OKButton
             // 
             this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OKButton.Location = new System.Drawing.Point(620, 328);
+            this.OKButton.Location = new System.Drawing.Point(562, 325);
             this.OKButton.Margin = new System.Windows.Forms.Padding(2);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(60, 23);
+            this.OKButton.Size = new System.Drawing.Size(90, 25);
             this.OKButton.TabIndex = 10;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
@@ -166,10 +166,10 @@
             // CancelButton
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(685, 328);
+            this.CancelButton.Location = new System.Drawing.Point(656, 325);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelButton.Name = "CancelButton";
-            this.CancelButton.Size = new System.Drawing.Size(60, 23);
+            this.CancelButton.Size = new System.Drawing.Size(90, 25);
             this.CancelButton.TabIndex = 11;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;

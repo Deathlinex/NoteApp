@@ -51,11 +51,13 @@
             this.CreatedTimeLabel = new System.Windows.Forms.Label();
             this.CreatedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TextBox = new System.Windows.Forms.TextBox();
+            this.InfoPanel = new System.Windows.Forms.Panel();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.InfoPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // MainMenuStrip
@@ -155,13 +157,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.CategoryLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.TitleLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.ModifiedTimeLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.ModifiedDateTimePicker);
-            this.splitContainer1.Panel2.Controls.Add(this.CreatedTimeLabel);
-            this.splitContainer1.Panel2.Controls.Add(this.CreatedDateTimePicker);
-            this.splitContainer1.Panel2.Controls.Add(this.TextBox);
+            this.splitContainer1.Panel2.Controls.Add(this.InfoPanel);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(834, 537);
@@ -246,7 +242,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(5, 31);
+            this.CategoryLabel.Location = new System.Drawing.Point(3, 23);
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(78, 13);
@@ -257,7 +253,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleLabel.Location = new System.Drawing.Point(4, 8);
+            this.TitleLabel.Location = new System.Drawing.Point(2, 0);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(85, 17);
@@ -269,7 +265,7 @@
             this.ModifiedTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ModifiedTimeLabel.AutoSize = true;
-            this.ModifiedTimeLabel.Location = new System.Drawing.Point(177, 60);
+            this.ModifiedTimeLabel.Location = new System.Drawing.Point(175, 52);
             this.ModifiedTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedTimeLabel.Name = "ModifiedTimeLabel";
             this.ModifiedTimeLabel.Size = new System.Drawing.Size(50, 13);
@@ -281,7 +277,7 @@
             this.ModifiedDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ModifiedDateTimePicker.Enabled = false;
-            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(230, 58);
+            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(228, 50);
             this.ModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.ModifiedDateTimePicker.Name = "ModifiedDateTimePicker";
             this.ModifiedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -293,7 +289,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CreatedTimeLabel.AutoSize = true;
-            this.CreatedTimeLabel.Location = new System.Drawing.Point(5, 59);
+            this.CreatedTimeLabel.Location = new System.Drawing.Point(3, 51);
             this.CreatedTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedTimeLabel.Name = "CreatedTimeLabel";
             this.CreatedTimeLabel.Size = new System.Drawing.Size(47, 13);
@@ -305,7 +301,7 @@
             this.CreatedDateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CreatedDateTimePicker.Enabled = false;
-            this.CreatedDateTimePicker.Location = new System.Drawing.Point(56, 58);
+            this.CreatedDateTimePicker.Location = new System.Drawing.Point(54, 50);
             this.CreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.CreatedDateTimePicker.Name = "CreatedDateTimePicker";
             this.CreatedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -316,13 +312,28 @@
             this.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox.Enabled = false;
-            this.TextBox.Location = new System.Drawing.Point(4, 80);
+            this.TextBox.Location = new System.Drawing.Point(2, 74);
             this.TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
-            this.TextBox.Size = new System.Drawing.Size(581, 452);
+            this.TextBox.ReadOnly = true;
+            this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.TextBox.Size = new System.Drawing.Size(569, 329);
             this.TextBox.TabIndex = 0;
+            // 
+            // InfoPanel
+            // 
+            this.InfoPanel.Controls.Add(this.TitleLabel);
+            this.InfoPanel.Controls.Add(this.TextBox);
+            this.InfoPanel.Controls.Add(this.CategoryLabel);
+            this.InfoPanel.Controls.Add(this.CreatedDateTimePicker);
+            this.InfoPanel.Controls.Add(this.CreatedTimeLabel);
+            this.InfoPanel.Controls.Add(this.ModifiedTimeLabel);
+            this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
+            this.InfoPanel.Location = new System.Drawing.Point(5, 5);
+            this.InfoPanel.Name = "InfoPanel";
+            this.InfoPanel.Size = new System.Drawing.Size(577, 523);
+            this.InfoPanel.TabIndex = 6;
             // 
             // MainForm
             // 
@@ -341,9 +352,10 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.InfoPanel.ResumeLayout(false);
+            this.InfoPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -374,5 +386,6 @@
         private System.Windows.Forms.Button RemoveButton;
         private System.Windows.Forms.Button EditButton;
         private System.Windows.Forms.Button AddButton;
+        private System.Windows.Forms.Panel InfoPanel;
     }
 }
