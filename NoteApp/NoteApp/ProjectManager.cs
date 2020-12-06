@@ -17,17 +17,21 @@ namespace NoteApp
 
         public static string DefaultfilePath = _defaultPath + "\\NoteApp.note";
 
+        public static void CheckFile()
+        {
+            if (!Directory.Exists(_defaultPath))
+            {
+                Directory.CreateDirectory(_defaultPath);
+            }
+        }
+
         
         /// <summary>
         /// Метод сериализации данных.
         /// </summary>
         public static void SaveToFile(Project notes, string filepath)
         {
-            if (!Directory.Exists(_defaultPath))
-            {
-                Directory.CreateDirectory(_defaultPath);
-            }
-
+            CheckFile();
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter(filepath))
             using (JsonWriter writer = new JsonTextWriter(sw))
@@ -43,19 +47,8 @@ namespace NoteApp
         {
             JsonSerializer serializer = new JsonSerializer();
             Project project = new Project();
-
-            if (!Directory.Exists(_defaultPath))
-            {
-                Directory.CreateDirectory(_defaultPath);
-            }
-
-            if (System.IO.File.Exists(DefaultfilePath) == false)
-            {
-                using (StreamWriter sw = new StreamWriter(filePath))
-                {
-                }
-            }
-
+            CheckFile();
+            
             try
             {
                 using (StreamReader sr = new StreamReader(filePath))
