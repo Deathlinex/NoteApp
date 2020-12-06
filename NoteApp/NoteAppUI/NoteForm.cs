@@ -87,6 +87,11 @@ namespace NoteAppUI
 
         private void OKButton_Click(object sender, EventArgs e)
         {
+            Note.Name = TitleTextBox.Text;
+            NoteCategory selectedNoteCategory = (NoteCategory)CategoryComboBox.SelectedItem;
+            Note.Category = selectedNoteCategory;
+            Note.TimeOfEdit = DateTime.Now;
+            Note.Text = TextBox.Text;
             this.DialogResult = DialogResult.OK;
             this.Close();
         }

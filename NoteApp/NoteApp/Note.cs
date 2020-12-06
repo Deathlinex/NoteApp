@@ -55,6 +55,7 @@ namespace NoteApp
                     {
                         _name = value;
                     }
+                    else _name = "Без названия";
                     TimeOfEdit = DateTime.Now;
                 }
             }

@@ -13,7 +13,7 @@ namespace NoteApp
         /// <summary>
         /// Имя файла для сериализации и десериализации данных.
         /// </summary>
-        private static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "//NoteApp.notes";
+        public static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "//NoteApp.notes";
         
         public static void CheckFile()
         {

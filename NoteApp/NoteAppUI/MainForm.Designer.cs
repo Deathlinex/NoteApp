@@ -155,6 +155,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.CategoryComboBox);
             this.splitContainer1.Panel1.Padding = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.Panel1MinSize = 200;
             // 
             // splitContainer1.Panel2
             // 
@@ -162,7 +163,7 @@
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(834, 537);
-            this.splitContainer1.SplitterDistance = 244;
+            this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
@@ -187,7 +188,7 @@
             this.NotesListBox.Location = new System.Drawing.Point(4, 34);
             this.NotesListBox.Margin = new System.Windows.Forms.Padding(2);
             this.NotesListBox.Name = "NotesListBox";
-            this.NotesListBox.Size = new System.Drawing.Size(236, 446);
+            this.NotesListBox.Size = new System.Drawing.Size(242, 446);
             this.NotesListBox.TabIndex = 2;
             this.NotesListBox.SelectedIndexChanged += new System.EventHandler(this.NotesListBox_SelectedIndexChanged);
             // 
@@ -237,7 +238,7 @@
             this.CategoryComboBox.MaximumSize = new System.Drawing.Size(174, 0);
             this.CategoryComboBox.MinimumSize = new System.Drawing.Size(76, 0);
             this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(151, 21);
+            this.CategoryComboBox.Size = new System.Drawing.Size(157, 21);
             this.CategoryComboBox.TabIndex = 0;
             // 
             // InfoPanel
@@ -254,7 +255,7 @@
             this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
             this.InfoPanel.Location = new System.Drawing.Point(5, 5);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(577, 523);
+            this.InfoPanel.Size = new System.Drawing.Size(572, 523);
             this.InfoPanel.TabIndex = 6;
             // 
             // TitleLabel
@@ -279,7 +280,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(569, 329);
+            this.TextBox.Size = new System.Drawing.Size(564, 329);
             this.TextBox.TabIndex = 0;
             // 
             // CategoryLabel

@@ -22,6 +22,8 @@ namespace NoteAppUI
             InitializeComponent();
 
             _project = ProjectManager.LoadFromFile();
+            if (_project == null)
+                _project = new Project();
             UpdateNotesListBox();
 
             CategoryComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
@@ -38,10 +40,7 @@ namespace NoteAppUI
 
             for (int i = 0; i < _project.Notes.Count; i++)
             {
-                if (_project.Notes[i].Name != "")
-                    NotesListBox.Items.Add(_project.Notes[i].Name);
-                else
-                    NotesListBox.Items.Add("Без названия");
+                NotesListBox.Items.Add(_project.Notes[i].Name);
             }
         }
 
@@ -138,16 +137,13 @@ namespace NoteAppUI
             try
             {
                 var selectedNote = _project.Notes[NotesListBox.SelectedIndex];
-                if (selectedNote.Name != "")
-                    TitleLabel.Text = selectedNote.Name;
-                else
-                    TitleLabel.Text = "Без названия";
-
+                TitleLabel.Text = selectedNote.Name;
                 CategoryLabel.Text = selectedNote.Category.ToString();
                 CreatedDateTimePicker.Value = selectedNote.TimeOfCreation;
                 ModifiedDateTimePicker.Value = selectedNote.TimeOfEdit;
                 TextBox.Text = selectedNote.Text;
                 ChangeVisiblePanel(true);
+
             }
             catch
             {
