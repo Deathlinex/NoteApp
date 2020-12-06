@@ -13,23 +13,23 @@ namespace NoteApp
         /// <summary>
         /// Имя файла для сериализации и десериализации данных.
         /// </summary>
-        public static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "//NoteApp.notes";
-        
-        public static void CheckFile()
-        {
-            if (!File.Exists(_defaultPath))
-                File.Create(_defaultPath).Close();
-        }
+        public static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp";
 
+        public static string DefaultfilePath = _defaultPath + "\\NoteApp.note";
+
+        
         /// <summary>
         /// Метод сериализации данных.
         /// </summary>
-        public static void SaveToFile(Project notes)
+        public static void SaveToFile(Project notes, string filepath)
         {
-           
+            if (!Directory.Exists(_defaultPath))
+            {
+                Directory.CreateDirectory(_defaultPath);
+            }
+
             JsonSerializer serializer = new JsonSerializer();
-            CheckFile();
-            using (StreamWriter sw = new StreamWriter(_defaultPath))
+            using (StreamWriter sw = new StreamWriter(filepath))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 serializer.Serialize(writer, notes);
@@ -39,23 +39,36 @@ namespace NoteApp
         /// <summary>
         /// Метод десериализации данных.
         /// </summary>
-        public static Project LoadFromFile()
+        public static Project LoadFromFile(string filePath)
         {
             JsonSerializer serializer = new JsonSerializer();
-            Project project;
+            Project project = new Project();
 
-            CheckFile();
+            if (!Directory.Exists(_defaultPath))
+            {
+                Directory.CreateDirectory(_defaultPath);
+            }
+
+            if (System.IO.File.Exists(DefaultfilePath) == false)
+            {
+                using (StreamWriter sw = new StreamWriter(filePath))
+                {
+                }
+            }
+
             try
             {
-                using (StreamReader sr = new StreamReader(_defaultPath))
-                using (JsonReader reader = new JsonTextReader(sr))
-                    project = (Project) serializer.Deserialize<Project>(reader);
+                using (StreamReader sr = new StreamReader(filePath))
+                using (JsonTextReader reader = new JsonTextReader(sr))
+                {
+                    project = (Project)serializer.Deserialize<Project>(reader);
+                }
+                
             }
             catch
             {
                 project = new Project();
             }
-
             return project;
         }
     }
