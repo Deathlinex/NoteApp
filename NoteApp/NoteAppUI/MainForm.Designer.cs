@@ -171,6 +171,9 @@
             // RemoveButton
             // 
             this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.RemoveButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RemoveButton.Image = global::NoteAppUI.Properties.Resources.СancelButton;
             this.RemoveButton.Location = new System.Drawing.Point(119, 488);
             this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
@@ -196,6 +199,9 @@
             // EditButton
             // 
             this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.EditButton.Image = global::NoteAppUI.Properties.Resources.EditButton;
             this.EditButton.Location = new System.Drawing.Point(65, 488);
             this.EditButton.Margin = new System.Windows.Forms.Padding(2);
@@ -208,6 +214,9 @@
             // AddButton
             // 
             this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AddButton.Image = global::NoteAppUI.Properties.Resources.AddButton;
             this.AddButton.Location = new System.Drawing.Point(11, 488);
             this.AddButton.Margin = new System.Windows.Forms.Padding(2);
