@@ -25,7 +25,7 @@ namespace NoteApp
         /// <summary>
         /// Время создания заметки.
         /// </summary>
-        private readonly DateTime _create = DateTime.Now;
+        private DateTime _create = DateTime.Now;
 
         /// <summary>
         /// Время изменения заметки.
@@ -61,15 +61,6 @@ namespace NoteApp
             }
         }
 
-        public Note()
-        {
-            _name = "";
-            _category = NoteCategory.Other;
-            _text = "";
-            _create = DateTime.Now;
-            _modify = DateTime.Now;
-        }
-
         public NoteCategory Category
         {
             get { return _category; }
@@ -99,6 +90,10 @@ namespace NoteApp
         public DateTime TimeOfCreation
         {
             get { return _create; }
+            set
+            {
+                _create = value;
+            }
         }
 
         /// <summary>
@@ -109,7 +104,7 @@ namespace NoteApp
             get { return _modify; }
             set
             {
-                _modify = DateTime.Now;
+                _modify = value;
             }
         }
 

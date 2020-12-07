@@ -21,7 +21,7 @@ namespace NoteAppUI
         {
             InitializeComponent();
 
-            _project = ProjectManager.LoadFromFile(ProjectManager.DefaultfilePath);
+            _project = ProjectManager.LoadFromFile(ProjectManager._defaultPath);
             if (_project == null)
                 _project = new Project();
             UpdateNotesListBox();
@@ -62,7 +62,7 @@ namespace NoteAppUI
             }
             else return;
 
-            ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
+            ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
 
         /// <summary>
@@ -95,7 +95,7 @@ namespace NoteAppUI
             }
             else return;
 
-            ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
+            ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
 
         /// <summary>
@@ -118,7 +118,7 @@ namespace NoteAppUI
             }
 
             ChangeVisiblePanel(false);
-            ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
+            ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
 
         /// <summary>
@@ -153,7 +153,7 @@ namespace NoteAppUI
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProjectManager.SaveToFile(_project, ProjectManager.DefaultfilePath);
+            ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
             Close();
         }
 

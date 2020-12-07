@@ -15,6 +15,6 @@ namespace NoteApp
         /// <summary>
         /// Список всех заметок в приложении.
         /// </summary>
-        public ObservableCollection<Note> Notes { get; set; } = new ObservableCollection<Note>();
+        public ObservableCollection<Note> Notes = new ObservableCollection<Note>();
     }
 }

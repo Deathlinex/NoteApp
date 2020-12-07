@@ -13,27 +13,16 @@ namespace NoteApp
         /// <summary>
         /// Имя файла для сериализации и десериализации данных.
         /// </summary>
-        public static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\NoteApp";
+        public static string _defaultPath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "/NoteApp/NoteApp.note";
 
-        public static string DefaultfilePath = _defaultPath + "\\NoteApp.note";
-
-        public static void CheckFile()
-        {
-            if (!Directory.Exists(_defaultPath))
-            {
-                Directory.CreateDirectory(_defaultPath);
-            }
-        }
-
-        
         /// <summary>
         /// Метод сериализации данных.
         /// </summary>
-        public static void SaveToFile(Project notes, string filepath)
+        public static void SaveToFile(Project notes, string filePath)
         {
-            CheckFile();
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
             JsonSerializer serializer = new JsonSerializer();
-            using (StreamWriter sw = new StreamWriter(filepath))
+            using (StreamWriter sw = new StreamWriter(filePath))
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 serializer.Serialize(writer, notes);
@@ -47,7 +36,6 @@ namespace NoteApp
         {
             JsonSerializer serializer = new JsonSerializer();
             Project project = new Project();
-            CheckFile();
             
             try
             {
