@@ -162,6 +162,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.InfoPanel);
             this.splitContainer1.Panel2.Padding = new System.Windows.Forms.Padding(2);
             this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.splitContainer1.Panel2MinSize = 370;
             this.splitContainer1.Size = new System.Drawing.Size(834, 537);
             this.splitContainer1.SplitterDistance = 250;
             this.splitContainer1.SplitterWidth = 3;
@@ -255,7 +256,7 @@
             this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
             this.InfoPanel.Location = new System.Drawing.Point(5, 5);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(572, 523);
+            this.InfoPanel.Size = new System.Drawing.Size(573, 523);
             this.InfoPanel.TabIndex = 6;
             // 
             // TitleLabel
@@ -280,7 +281,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(564, 329);
+            this.TextBox.Size = new System.Drawing.Size(565, 329);
             this.TextBox.TabIndex = 0;
             // 
             // CategoryLabel
