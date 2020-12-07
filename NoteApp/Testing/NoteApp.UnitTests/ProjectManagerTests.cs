@@ -12,18 +12,16 @@ namespace NoteApp.UnitTests
     [TestFixture]
     public class ProjectManagerTests
     {
-        [Test]
-        public void SaveToFile_CorrectProject_FileSavedCorrectly()
+        public Project PrepareProject()
         {
-            // Setup
             var sourceProject = new Project();
             sourceProject.Notes.Add(new Note()
             {
                 Name = "Note",
                 Text = "Text",
                 Category = NoteCategory.Documents,
-                TimeOfCreation = new DateTime(2020, 2,20),
-                TimeOfEdit =  new DateTime(2020, 2, 21)
+                TimeOfCreation = new DateTime(2020, 2, 20),
+                TimeOfEdit = new DateTime(2020, 2, 21)
             });
             sourceProject.Notes.Add(new Note()
             {
@@ -33,7 +31,14 @@ namespace NoteApp.UnitTests
                 TimeOfCreation = new DateTime(2020, 2, 20),
                 TimeOfEdit = new DateTime(2020, 2, 21)
             });
-
+            return sourceProject;
+        }
+        
+        [Test]
+        public void SaveToFile_CorrectProject_FileSavedCorrectly()
+        {
+            // Setup
+            var sourceProject = PrepareProject();
             var location = Assembly.GetExecutingAssembly().Location;
             var testDataFolder = Path.GetDirectoryName(location) + @"\TestData";
             var actualFilename = testDataFolder + @"\actualProject.json";

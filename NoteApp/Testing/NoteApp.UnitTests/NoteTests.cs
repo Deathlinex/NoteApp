@@ -6,30 +6,31 @@ namespace NoteApp.UnitTests
     [TestFixture]
     public class NoteTests
     {
-        private Note _note;
-        
-        [SetUp]
-        public void InitNote()
+        public Note PrepareNote()
         {
-            // Данные для теста
-            _note = new Note();
-            _note.Name = "Имя заметки один два три";
-            _note.Category = NoteCategory.Finances;
-            _note.Text = "Текст заметки три два один";
-            _note.TimeOfCreation = DateTime.Now;
-            _note.TimeOfEdit = DateTime.Now;
-        }
+            var sourceNote = new Note()
+            {
 
+                Name = "Имя заметки один два три",
+                Category = NoteCategory.Finances,
+                Text = "Текст заметки три два один",
+                TimeOfCreation = DateTime.Now,
+                TimeOfEdit = DateTime.Now
+            };
+            return sourceNote;
+        }
+        
         [Test]
         public void Name_GoodName_ReturnsSameName()
         {
             // Setup
-            var sourceName = _note.Name;
+            var sourceNote = PrepareNote();
+            var sourceName = sourceNote.Name;
             var expectedName = sourceName;
 
             // Act
-            _note.Name = sourceName;
-            var actualName = _note.Name;
+            sourceNote.Name = sourceName;
+            var actualName = sourceNote.Name;
 
             // Assert
             NUnit.Framework.Assert.AreEqual(expectedName, actualName);
@@ -39,12 +40,13 @@ namespace NoteApp.UnitTests
         public void Name_EmptyName_ReturnsDefaultName()
         {
             // Setup
+            var sourceNote = PrepareNote();
             var sourceName = "";
             var expectedName = "Без названия";
 
             // Act
-            _note.Name = sourceName;
-            var actualName = _note.Name;
+            sourceNote.Name = sourceName;
+            var actualName = sourceNote.Name;
 
             // Assert
             NUnit.Framework.Assert.AreEqual(expectedName, actualName);
@@ -54,6 +56,7 @@ namespace NoteApp.UnitTests
         public void Name_TooLongName_ThrowsException()
         {
             // Setup
+            var sourceNote = PrepareNote();
             var sourceName = "Заметка номер один, Заметка номер один, Заметка номер один, Заметка номер один, Заметка номер один.";
             
             // Assert
@@ -62,7 +65,7 @@ namespace NoteApp.UnitTests
                 () =>
                 {
                     // Act
-                    _note.Name = sourceName;
+                    sourceNote.Name = sourceName;
                 }
             );
         }
@@ -71,12 +74,13 @@ namespace NoteApp.UnitTests
         public void Text_GoodText_ReturnsSameText()
         {
             // Setup
-            var sourceText = _note.Text;
+            var sourceNote = PrepareNote();
+            var sourceText = sourceNote.Text;
             var expectedText = sourceText;
 
             // Act
-            _note.Text = sourceText;
-            var actualText = _note.Text;
+            sourceNote.Text = sourceText;
+            var actualText = sourceNote.Text;
 
             // Assert
             NUnit.Framework.Assert.AreEqual(expectedText, actualText);
@@ -86,24 +90,26 @@ namespace NoteApp.UnitTests
         public void Clone_GoodClone_ReturnsSameClone()
         {
             // Setup
-            var expectedClone = (Note)_note.Clone();
+            var sourceNote = PrepareNote();
+            var expectedClone = (Note)sourceNote.Clone();
 
             // Assert
-            NUnit.Framework.Assert.AreEqual(expectedClone.Text, _note.Text);
-            NUnit.Framework.Assert.AreEqual(expectedClone.Name, _note.Name);
-            NUnit.Framework.Assert.AreEqual(expectedClone.Category, _note.Category);
+            NUnit.Framework.Assert.AreEqual(expectedClone.Text, sourceNote.Text);
+            NUnit.Framework.Assert.AreEqual(expectedClone.Name, sourceNote.Name);
+            NUnit.Framework.Assert.AreEqual(expectedClone.Category, sourceNote.Category);
         }
 
         [Test]
         public void TimeOfCreation_GoodTime_ReturnsSameTime()
         {
             // Setup
-            var sourceCreation = _note.TimeOfCreation;
-            var expectedCreation = _note.TimeOfCreation;
+            var sourceNote = PrepareNote();
+            var sourceCreation = sourceNote.TimeOfCreation;
+            var expectedCreation = sourceNote.TimeOfCreation;
 
             // Act
-            _note.TimeOfCreation = sourceCreation;
-            var actualCreation = _note.TimeOfCreation;
+            sourceNote.TimeOfCreation = sourceCreation;
+            var actualCreation = sourceNote.TimeOfCreation;
 
             // Assert
             NUnit.Framework.Assert.AreEqual(expectedCreation, actualCreation);
@@ -113,12 +119,13 @@ namespace NoteApp.UnitTests
         public void TimeOfEdit_GoodTime_ReturnsSameTime()
         {
             // Setup
-            var sourceEdit = _note.TimeOfEdit;
-            var expectedEdit = _note.TimeOfEdit;
+            var sourceNote = PrepareNote();
+            var sourceEdit = sourceNote.TimeOfEdit;
+            var expectedEdit = sourceNote.TimeOfEdit;
 
             // Act
-            _note.TimeOfEdit = sourceEdit;
-            var actualEdit = _note.TimeOfEdit;
+            sourceNote.TimeOfEdit = sourceEdit;
+            var actualEdit = sourceNote.TimeOfEdit;
 
             // Assert
             NUnit.Framework.Assert.AreEqual(expectedEdit, actualEdit);
