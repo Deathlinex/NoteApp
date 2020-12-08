@@ -58,16 +58,24 @@ namespace NoteAppUI
             ModifiedDateTimePicker.Value = _note.TimeOfEdit;
         }
 
+        private void ChangeVisiblePanel(bool isVisible)
+        {
+            ErrorLabel.Visible = isVisible;
+        }
+
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 _note.Name = TitleTextBox.Text;
+                TitleTextBox.BackColor = Color.White;
+                ChangeVisiblePanel(false);
             }
-            catch (Exception exceptionText)
+            catch (Exception)
             {
-                MessageBox.Show(exceptionText.Message, "Exceeded line length.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                TitleTextBox.Text = _note.Name;
+                TitleTextBox.BackColor = Color.LightSalmon;
+                ChangeVisiblePanel(true);
+                ErrorLabel.Text = "Maximum 50 characters!";
             }
         }
 
