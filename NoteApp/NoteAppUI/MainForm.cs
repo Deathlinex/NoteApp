@@ -73,7 +73,7 @@ namespace NoteAppUI
             var selectedIndex = NotesListBox.SelectedIndex;
             if (selectedIndex == -1)
             {
-                MessageBox.Show("Не выбрана запись для редактирования", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No entries selected for editing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -106,11 +106,11 @@ namespace NoteAppUI
             var selectedIdex = NotesListBox.SelectedIndex;
             if (selectedIdex == -1)
             {
-                MessageBox.Show("Не выбрана запись для удаления", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No entries selected for deletion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var dialogResult = MessageBox.Show("Вы дейcтвительно хотите удалить запись?", "Удаление записи", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            var dialogResult = MessageBox.Show("Do you really want to delete the entry?", "Delete entry", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (dialogResult == DialogResult.OK)
             {
                 _project.Notes.RemoveAt(selectedIdex);
@@ -147,7 +147,7 @@ namespace NoteAppUI
             }
             catch
             {
-                MessageBox.Show("Запись не найдена", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Entry not found", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

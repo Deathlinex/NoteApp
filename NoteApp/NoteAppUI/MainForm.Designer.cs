@@ -265,7 +265,7 @@
             this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
             this.InfoPanel.Location = new System.Drawing.Point(5, 5);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(573, 523);
+            this.InfoPanel.Size = new System.Drawing.Size(574, 523);
             this.InfoPanel.TabIndex = 6;
             // 
             // TitleLabel
@@ -290,7 +290,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(565, 329);
+            this.TextBox.Size = new System.Drawing.Size(566, 329);
             this.TextBox.TabIndex = 0;
             // 
             // CategoryLabel

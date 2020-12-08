@@ -47,7 +47,7 @@ namespace NoteApp
             {
                 if (value.Length > 50)
                 {
-                    throw new ArgumentException("Название заметки ограничено 50 символами. Ваше количество символов: " + value.Length);
+                    throw new ArgumentException("Note title is limited to 50 characters. Your number of characters: " + value.Length);
                 }
                 else
                 {

@@ -66,7 +66,7 @@ namespace NoteAppUI
             }
             catch (Exception exceptionText)
             {
-                MessageBox.Show(exceptionText.Message, "Превышение длины строки", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(exceptionText.Message, "Exceeded line length.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 TitleTextBox.Text = _note.Name;
             }
         }
