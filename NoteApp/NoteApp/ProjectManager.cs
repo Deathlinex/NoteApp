@@ -48,7 +48,7 @@ namespace NoteApp
             }
             catch
             {
-                project = new Project();
+                return project;
             }
             return project;
         }

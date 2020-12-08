@@ -22,8 +22,6 @@ namespace NoteAppUI
             InitializeComponent();
 
             _project = ProjectManager.LoadFromFile(ProjectManager._defaultPath);
-            if (_project == null)
-                _project = new Project();
             UpdateNotesListBox();
 
             CategoryComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
