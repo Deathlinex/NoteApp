@@ -73,7 +73,7 @@ namespace NoteAppUI
             }
             catch (Exception)
             {
-                TitleTextBox.BackColor = Color.LightSalmon;
+                TitleTextBox.BackColor = Color.IndianRed;
                 ChangeVisiblePanel(true);
                 ErrorLabel.Text = "Maximum 50 characters!";
             }
@@ -95,13 +95,27 @@ namespace NoteAppUI
 
         private void OKButton_Click(object sender, EventArgs e)
         {
-            Note.Name = TitleTextBox.Text;
-            NoteCategory selectedNoteCategory = (NoteCategory)CategoryComboBox.SelectedItem;
-            Note.Category = selectedNoteCategory;
-            Note.TimeOfEdit = DateTime.Now;
-            Note.Text = TextBox.Text;
-            this.DialogResult = DialogResult.OK;
-            this.Close();
+            bool check;
+            try
+            {
+                check = true;
+                Note.Name = TitleTextBox.Text;
+                NoteCategory selectedNoteCategory = (NoteCategory) CategoryComboBox.SelectedItem;
+                Note.Category = selectedNoteCategory;
+                Note.TimeOfEdit = DateTime.Now;
+                Note.Text = TextBox.Text;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error");
+                check = false;
+            }
+
+            if (check)
+            {
+                DialogResult = DialogResult.OK;
+                this.Close();
+            }
         }
 
         private void CancelButton_Click(object sender, EventArgs e)
