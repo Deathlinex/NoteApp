@@ -265,14 +265,14 @@
             this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
             this.InfoPanel.Location = new System.Drawing.Point(5, 5);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(574, 523);
+            this.InfoPanel.Size = new System.Drawing.Size(575, 523);
             this.InfoPanel.TabIndex = 6;
             // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleLabel.Location = new System.Drawing.Point(2, 0);
+            this.TitleLabel.Location = new System.Drawing.Point(2, 3);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(85, 17);
@@ -290,13 +290,13 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(566, 329);
+            this.TextBox.Size = new System.Drawing.Size(567, 329);
             this.TextBox.TabIndex = 0;
             // 
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(3, 23);
+            this.CategoryLabel.Location = new System.Drawing.Point(2, 29);
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(78, 13);
@@ -320,7 +320,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CreatedTimeLabel.AutoSize = true;
-            this.CreatedTimeLabel.Location = new System.Drawing.Point(3, 51);
+            this.CreatedTimeLabel.Location = new System.Drawing.Point(3, 52);
             this.CreatedTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedTimeLabel.Name = "CreatedTimeLabel";
             this.CreatedTimeLabel.Size = new System.Drawing.Size(47, 13);
@@ -332,7 +332,7 @@
             this.ModifiedTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ModifiedTimeLabel.AutoSize = true;
-            this.ModifiedTimeLabel.Location = new System.Drawing.Point(175, 52);
+            this.ModifiedTimeLabel.Location = new System.Drawing.Point(174, 52);
             this.ModifiedTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedTimeLabel.Name = "ModifiedTimeLabel";
             this.ModifiedTimeLabel.Size = new System.Drawing.Size(50, 13);

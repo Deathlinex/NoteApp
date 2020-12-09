@@ -37,10 +37,10 @@
             this.ModifiedDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.TextBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ErrorLabel = new System.Windows.Forms.Label();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.OKButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
-            this.ErrorLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,7 +76,7 @@
             // CreatedDateLabel
             // 
             this.CreatedDateLabel.AutoSize = true;
-            this.CreatedDateLabel.Location = new System.Drawing.Point(2, 57);
+            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 57);
             this.CreatedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedDateLabel.Name = "CreatedDateLabel";
             this.CreatedDateLabel.Size = new System.Drawing.Size(47, 13);
@@ -144,6 +144,17 @@
             this.panel1.Size = new System.Drawing.Size(736, 77);
             this.panel1.TabIndex = 9;
             // 
+            // ErrorLabel
+            // 
+            this.ErrorLabel.AutoSize = true;
+            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ErrorLabel.Location = new System.Drawing.Point(341, 26);
+            this.ErrorLabel.Name = "ErrorLabel";
+            this.ErrorLabel.Size = new System.Drawing.Size(75, 17);
+            this.ErrorLabel.TabIndex = 9;
+            this.ErrorLabel.Text = "ErrorLabel";
+            this.ErrorLabel.Visible = false;
+            // 
             // CategoryComboBox
             // 
             this.CategoryComboBox.FormattingEnabled = true;
@@ -177,17 +188,6 @@
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);
-            // 
-            // ErrorLabel
-            // 
-            this.ErrorLabel.AutoSize = true;
-            this.ErrorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ErrorLabel.Location = new System.Drawing.Point(341, 26);
-            this.ErrorLabel.Name = "ErrorLabel";
-            this.ErrorLabel.Size = new System.Drawing.Size(75, 17);
-            this.ErrorLabel.TabIndex = 9;
-            this.ErrorLabel.Text = "ErrorLabel";
-            this.ErrorLabel.Visible = false;
             // 
             // NoteForm
             // 
