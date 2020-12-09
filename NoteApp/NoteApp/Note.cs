@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -123,6 +125,35 @@ namespace NoteApp
                 Category = this.Category,
                 TimeOfEdit = this.TimeOfEdit
             };
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj is Note note)
+            {
+                if (note.Name != this.Name)
+                {
+                    return false;
+                }
+                if (note.Text != this.Text)
+                {
+                    return false;
+                }
+                if (note.TimeOfEdit != this.TimeOfEdit)
+                {
+                    return false;
+                }
+                if (note.TimeOfCreation != this.TimeOfCreation)
+                {
+                    return false;
+                }
+                if (note.Category != this.Category)
+                {
+                    return false;
+                }
+                return true;
+            }
+            return false;
         }
     }
 }

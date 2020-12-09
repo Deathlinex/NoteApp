@@ -71,16 +71,13 @@ namespace NoteApp.UnitTests
             var project = ProjectManager.LoadFromFile(expectedFilename);
 
             // Assert
+            Assert.AreEqual(sourceProject.Notes.Count, project.Notes.Count);
+
             Assert.Multiple(() =>
             {
-                Assert.AreEqual(sourceProject.Notes.Count, project.Notes.Count);
-                for (int i = 0; i != sourceProject.Notes.Count; i++)
+                for (int i = 0; i < sourceProject.Notes.Count; i++)
                 {
-                    Assert.AreEqual(sourceProject.Notes[i].Name,project.Notes[i].Name);
-                    Assert.AreEqual(sourceProject.Notes[i].Text, project.Notes[i].Text);
-                    Assert.AreEqual(sourceProject.Notes[i].Category, project.Notes[i].Category);
-                    Assert.AreEqual(sourceProject.Notes[i].TimeOfEdit, project.Notes[i].TimeOfEdit);
-                    Assert.AreEqual(sourceProject.Notes[i].TimeOfCreation, project.Notes[i].TimeOfCreation);
+                    Assert.AreEqual(sourceProject.Notes[i], project.Notes[i]);
                 }
             });
         }
