@@ -57,7 +57,7 @@
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Location = new System.Drawing.Point(2, 5);
+            this.TitleLabel.Location = new System.Drawing.Point(7, 5);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(30, 13);
@@ -67,7 +67,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(2, 30);
+            this.CategoryLabel.Location = new System.Drawing.Point(7, 30);
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(52, 13);
@@ -77,7 +77,7 @@
             // CreatedDateLabel
             // 
             this.CreatedDateLabel.AutoSize = true;
-            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 57);
+            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 56);
             this.CreatedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedDateLabel.Name = "CreatedDateLabel";
             this.CreatedDateLabel.Size = new System.Drawing.Size(47, 13);
@@ -87,7 +87,7 @@
             // ModifiedDateLabel
             // 
             this.ModifiedDateLabel.AutoSize = true;
-            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 57);
+            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 56);
             this.ModifiedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedDateLabel.Name = "ModifiedDateLabel";
             this.ModifiedDateLabel.Size = new System.Drawing.Size(50, 13);
@@ -97,7 +97,7 @@
             // CreatedDateTimePicker
             // 
             this.CreatedDateTimePicker.Enabled = false;
-            this.CreatedDateTimePicker.Location = new System.Drawing.Point(58, 53);
+            this.CreatedDateTimePicker.Location = new System.Drawing.Point(58, 51);
             this.CreatedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.CreatedDateTimePicker.Name = "CreatedDateTimePicker";
             this.CreatedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -106,7 +106,7 @@
             // ModifiedDateTimePicker
             // 
             this.ModifiedDateTimePicker.Enabled = false;
-            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(244, 53);
+            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(244, 50);
             this.ModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.ModifiedDateTimePicker.Name = "ModifiedDateTimePicker";
             this.ModifiedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -159,7 +159,7 @@
             // CategoryComboBox
             // 
             this.CategoryComboBox.FormattingEnabled = true;
-            this.CategoryComboBox.Location = new System.Drawing.Point(58, 28);
+            this.CategoryComboBox.Location = new System.Drawing.Point(58, 26);
             this.CategoryComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(128, 21);

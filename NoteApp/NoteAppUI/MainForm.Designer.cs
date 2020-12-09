@@ -231,7 +231,7 @@
             this.CategoryComboLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.CategoryComboLabel.AutoSize = true;
-            this.CategoryComboLabel.Location = new System.Drawing.Point(4, 8);
+            this.CategoryComboLabel.Location = new System.Drawing.Point(4, 9);
             this.CategoryComboLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryComboLabel.Name = "CategoryComboLabel";
             this.CategoryComboLabel.Size = new System.Drawing.Size(82, 13);
@@ -272,7 +272,7 @@
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.TitleLabel.Location = new System.Drawing.Point(2, 3);
+            this.TitleLabel.Location = new System.Drawing.Point(3, 2);
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(85, 17);
@@ -296,7 +296,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(2, 29);
+            this.CategoryLabel.Location = new System.Drawing.Point(3, 29);
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(78, 13);
