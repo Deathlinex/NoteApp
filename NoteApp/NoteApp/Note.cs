@@ -58,7 +58,6 @@ namespace NoteApp
                         _name = value;
                     }
                     else _name = "Без названия";
-                    TimeOfEdit = DateTime.Now;
                 }
             }
         }
@@ -69,7 +68,6 @@ namespace NoteApp
             set
             {
                 _category = value;
-                TimeOfEdit = DateTime.Now;
             }
         }
 
@@ -82,7 +80,6 @@ namespace NoteApp
             set
             {
                 _text = value;
-                TimeOfEdit = DateTime.Now;
             }
         }
 
@@ -118,13 +115,14 @@ namespace NoteApp
         /// </returns>
         public object Clone()
         {
-            return new Note
-            {
-                Name = this.Name,
-                Text = this.Text,
-                Category = this.Category,
-                TimeOfEdit = this.TimeOfEdit
-            };
+            var clonedNote = new Note();
+
+            clonedNote.Name = this.Name;
+            clonedNote.Text = this.Text;
+            clonedNote.Category = this.Category;
+            clonedNote.TimeOfCreation = this.TimeOfCreation;
+            clonedNote.TimeOfEdit = this.TimeOfEdit;
+            return clonedNote;
         }
 
         public override bool Equals(object obj)

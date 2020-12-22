@@ -15,6 +15,21 @@ namespace NoteApp
         /// <summary>
         /// Список всех заметок в приложении.
         /// </summary>
-        public ObservableCollection<Note> Notes = new ObservableCollection<Note>();
+        public List<Note> Notes = new List<Note>();
+
+
+        /// <summary>
+        /// Текущий индекс заметки
+        /// </summary>
+        public int CurrentNoteIndex { get; set; }
+
+        public List<Note> SortByEdited(List<Note> notesToSort)
+        {
+            return notesToSort = notesToSort.OrderByDescending(item => item.TimeOfEdit).ToList();
+        }
+        public List<Note> SortByEdited(List<Note> notesToSort, NoteCategory category)
+        {
+            return notesToSort = notesToSort.Where(item => item.Category == category).OrderByDescending(item => item.TimeOfEdit).ToList();
+        }
     }
 }

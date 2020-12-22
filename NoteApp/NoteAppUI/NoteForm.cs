@@ -46,16 +46,14 @@ namespace NoteAppUI
         {
             if (_note == null)
             {
-                CreatedDateTimePicker.Value = DateTime.Now;
-                ModifiedDateTimePicker.Value = DateTime.Now;
-                return;
+               return;
             }
 
             TitleTextBox.Text = _note.Name;
             CategoryComboBox.SelectedItem = _note.Category;
-            TextBox.Text = _note.Text;
             CreatedDateTimePicker.Value = _note.TimeOfCreation;
-            ModifiedDateTimePicker.Value = _note.TimeOfEdit;
+            ModifiedDateTimePicker.Value = DateTime.Now;
+            TextBox.Text = _note.Text;
         }
 
         private void ChangeVisiblePanel(bool isVisible)

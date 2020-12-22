@@ -250,6 +250,7 @@
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(157, 21);
             this.CategoryComboBox.TabIndex = 0;
+            this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // InfoPanel
             // 
@@ -265,7 +266,7 @@
             this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
             this.InfoPanel.Location = new System.Drawing.Point(5, 5);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(575, 523);
+            this.InfoPanel.Size = new System.Drawing.Size(577, 523);
             this.InfoPanel.TabIndex = 6;
             // 
             // TitleLabel
@@ -290,7 +291,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(567, 329);
+            this.TextBox.Size = new System.Drawing.Size(569, 329);
             this.TextBox.TabIndex = 0;
             // 
             // CategoryLabel
@@ -359,10 +360,12 @@
             this.Controls.Add(this.MainMenuStrip);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(650, 450);
+            this.MinimumSize = new System.Drawing.Size(850, 600);
             this.Name = "MainForm";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "NoteApp";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.NotesListBox_KeyDown);
             this.MainMenuStrip.ResumeLayout(false);
             this.MainMenuStrip.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
