@@ -57,7 +57,7 @@ namespace NoteApp
                     {
                         _name = value;
                     }
-                    else _name = "Без названия";
+                    else _name = "Unnamed";
                 }
             }
         }

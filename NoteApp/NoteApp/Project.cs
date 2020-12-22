@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NoteApp
 {
@@ -23,13 +19,13 @@ namespace NoteApp
         /// </summary>
         public int CurrentNoteIndex { get; set; }
 
-        public List<Note> SortByEdited(List<Note> notesToSort)
+        public List<Note> SortingByEditing(List<Note> _notesToSort)
         {
-            return notesToSort = notesToSort.OrderByDescending(item => item.TimeOfEdit).ToList();
+            return _notesToSort = _notesToSort.OrderByDescending(item => item.TimeOfEdit).ToList();
         }
-        public List<Note> SortByEdited(List<Note> notesToSort, NoteCategory category)
+        public List<Note> SortingByEditing(List<Note> _notesToSort, NoteCategory category)
         {
-            return notesToSort = notesToSort.Where(item => item.Category == category).OrderByDescending(item => item.TimeOfEdit).ToList();
+            return _notesToSort = _notesToSort.Where(item => item.Category == category).OrderByDescending(item => item.TimeOfEdit).ToList();
         }
     }
 }

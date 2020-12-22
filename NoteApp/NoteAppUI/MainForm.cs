@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using NoteApp;
 
@@ -16,25 +10,11 @@ namespace NoteAppUI
     {
         // Список заметок, которые необходимо отобразить на форме.
         private Project _project;
-
-        private List<Note> _sortedNotes = new List<Note>();
-
-        private List<Note> SortedNotes
-        {
-            get
-            {
-                return _sortedNotes;
-            }
-            set
-            {
-                _sortedNotes = value;
-            }
-        }
-
+        private List<Note> _listBoxNotes = new List<Note>();
+        
         public MainForm()
         {
             InitializeComponent();
-
             _project = ProjectManager.LoadFromFile(ProjectManager._defaultPath);
 
             CategoryComboBox.Items.Add("Work");
@@ -46,17 +26,11 @@ namespace NoteAppUI
             CategoryComboBox.Items.Add("Other");
             CategoryComboBox.Items.Add("All");
             CategoryComboBox.SelectedIndex = 7;
-            // CategoryComboBox.DataSource = Enum.GetValues(typeof(NoteCategory));
 
-            _sortedNotes = _project.Notes;
-            _sortedNotes = _project.SortByEdited(SortedNotes);
-            
+            _listBoxNotes = _project.Notes;
+            _listBoxNotes = _project.SortingByEditing(_listBoxNotes);
             UpdateNotesListBox();
-            if (_sortedNotes.Count != 0)
-            {
-                LastNoteIndexSelect();
-            }
-           
+            LastNoteIndexSelected();
         }
 
         /// <summary>
@@ -64,21 +38,19 @@ namespace NoteAppUI
         /// </summary>
         private void UpdateNotesListBox()
         {
-            _sortedNotes = _project.Notes;
+            _listBoxNotes = _project.Notes;
             if (CategoryComboBox.SelectedIndex != 7)
             {
-                _sortedNotes = _project.SortByEdited(_sortedNotes, (NoteCategory) CategoryComboBox.SelectedIndex);
+                _listBoxNotes = _project.SortingByEditing(_listBoxNotes, (NoteCategory) CategoryComboBox.SelectedIndex);
             }
             else
             {
-                _sortedNotes = _project.SortByEdited(_sortedNotes);
-            }
+                _listBoxNotes = _project.SortingByEditing(_listBoxNotes);
+            } NotesListBox.Items.Clear();
 
-            NotesListBox.Items.Clear();
-
-            foreach (var Note in _sortedNotes)
+            for (int i = 0; i < _listBoxNotes.Count; i++)
             {
-                NotesListBox.Items.Add(Note.Name);
+                NotesListBox.Items.Add(_listBoxNotes[i].Name);
             }
         }
 
@@ -95,27 +67,22 @@ namespace NoteAppUI
                 var addedNote = addForm.Note;
 
                 _project.Notes.Add(addedNote);
-                _sortedNotes.Add(addedNote);
-
+                _listBoxNotes.Add(addedNote);
                 NotesListBox.Items.Add(addedNote);
-
                 UpdateNotesListBox();
-
                 if (NotesListBox.Items.Count != 0)
                 {
                     NotesListBox.SelectedIndex = 0;
                 }
             }
             else return;
-
             ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
-
-
+        
         /// <summary>
         /// Последняя выбранная заметка.
         /// </summary>
-        private void LastNoteIndexSelect()
+        private void LastNoteIndexSelected()
         {
             try
             {
@@ -136,10 +103,11 @@ namespace NoteAppUI
             var sortedSelectedIndex = NotesListBox.SelectedIndex;
             if (sortedSelectedIndex == -1)
             {
+                MessageBox.Show("No entries selected for editing", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var selectedNote = _sortedNotes[sortedSelectedIndex];
+            var selectedNote = _listBoxNotes[sortedSelectedIndex];
             var editForm = new NoteForm();
             editForm.Note = selectedNote;
             editForm.ShowDialog();
@@ -149,13 +117,12 @@ namespace NoteAppUI
                 var editedNote = editForm.Note;
                 var notesSelectedIndex = _project.Notes.IndexOf(selectedNote);
 
-                _sortedNotes.RemoveAt(sortedSelectedIndex);
+                _listBoxNotes.RemoveAt(sortedSelectedIndex);
                 _project.Notes.RemoveAt(notesSelectedIndex);
-
-                _sortedNotes.Insert(sortedSelectedIndex, editedNote);
+                _listBoxNotes.Insert(sortedSelectedIndex, editedNote);
                 _project.Notes.Insert(notesSelectedIndex, editedNote);
                 NotesListBox.Items.Insert(sortedSelectedIndex, editedNote.Name);
-
+                
                 UpdateNotesListBox();
                 if (NotesListBox.Items.Count != 0)
                 {
@@ -163,10 +130,7 @@ namespace NoteAppUI
                 }
                 _project.CurrentNoteIndex = NotesListBox.SelectedIndex;
             }
-            else
-            {
-                return;
-            }
+            else return;
 
             ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
@@ -177,7 +141,7 @@ namespace NoteAppUI
         private void RemoveNote()
         {
             var selectedSortedIndex = NotesListBox.SelectedIndex;
-            Note note = _sortedNotes[selectedSortedIndex];
+            Note note = _listBoxNotes[selectedSortedIndex];
 
             if (selectedSortedIndex == -1)
             {
@@ -188,9 +152,11 @@ namespace NoteAppUI
             if (dialogResult == DialogResult.OK)
             {
                 var notesSelectedIndex = _project.Notes.IndexOf(note);
-                _sortedNotes.RemoveAt(selectedSortedIndex);
+
+                _listBoxNotes.RemoveAt(selectedSortedIndex);
                 _project.Notes.RemoveAt(notesSelectedIndex);
                 NotesListBox.Items.RemoveAt(selectedSortedIndex);
+
                 UpdateNotesListBox();
                 if (NotesListBox.Items.Count != 0)
                 {
@@ -216,7 +182,7 @@ namespace NoteAppUI
         {
             try
             {
-                var selectedSortedNote = _sortedNotes[NotesListBox.SelectedIndex];
+                var selectedSortedNote = _listBoxNotes[NotesListBox.SelectedIndex];
 
                 if (NotesListBox.SelectedIndex == -1)
                 {
