@@ -50,7 +50,7 @@
             this.TitleTextBox.Location = new System.Drawing.Point(58, 2);
             this.TitleTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.TitleTextBox.Name = "TitleTextBox";
-            this.TitleTextBox.Size = new System.Drawing.Size(524, 20);
+            this.TitleTextBox.Size = new System.Drawing.Size(528, 20);
             this.TitleTextBox.TabIndex = 0;
             this.TitleTextBox.TextChanged += new System.EventHandler(this.TitleTextBox_TextChanged);
             // 
@@ -77,7 +77,7 @@
             // CreatedDateLabel
             // 
             this.CreatedDateLabel.AutoSize = true;
-            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 56);
+            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 52);
             this.CreatedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedDateLabel.Name = "CreatedDateLabel";
             this.CreatedDateLabel.Size = new System.Drawing.Size(47, 13);
@@ -87,7 +87,7 @@
             // ModifiedDateLabel
             // 
             this.ModifiedDateLabel.AutoSize = true;
-            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 56);
+            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 52);
             this.ModifiedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedDateLabel.Name = "ModifiedDateLabel";
             this.ModifiedDateLabel.Size = new System.Drawing.Size(50, 13);
@@ -117,12 +117,12 @@
             this.TextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TextBox.Location = new System.Drawing.Point(9, 92);
+            this.TextBox.Location = new System.Drawing.Point(9, 85);
             this.TextBox.Margin = new System.Windows.Forms.Padding(2);
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(737, 232);
+            this.TextBox.Size = new System.Drawing.Size(736, 232);
             this.TextBox.TabIndex = 8;
             this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
@@ -142,7 +142,7 @@
             this.panel1.Location = new System.Drawing.Point(9, 10);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(736, 77);
+            this.panel1.Size = new System.Drawing.Size(736, 71);
             this.panel1.TabIndex = 9;
             // 
             // ErrorLabel
@@ -162,7 +162,7 @@
             this.CategoryComboBox.Location = new System.Drawing.Point(58, 26);
             this.CategoryComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.CategoryComboBox.Name = "CategoryComboBox";
-            this.CategoryComboBox.Size = new System.Drawing.Size(128, 21);
+            this.CategoryComboBox.Size = new System.Drawing.Size(110, 21);
             this.CategoryComboBox.TabIndex = 8;
             this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
