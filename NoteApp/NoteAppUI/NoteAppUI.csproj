@@ -110,15 +110,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EditButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\AddButton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\СancelButton.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Button_Add.png" />
   </ItemGroup>
   <ItemGroup>
