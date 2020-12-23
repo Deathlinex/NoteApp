@@ -17,16 +17,12 @@ namespace NoteAppUI
             InitializeComponent();
             _project = ProjectManager.LoadFromFile(ProjectManager._defaultPath);
 
-            CategoryComboBox.Items.Add("Work");
-            CategoryComboBox.Items.Add("Home");
-            CategoryComboBox.Items.Add("HealthAndSport");
-            CategoryComboBox.Items.Add("People");
-            CategoryComboBox.Items.Add("Documents");
-            CategoryComboBox.Items.Add("Finances");
-            CategoryComboBox.Items.Add("Other");
+            for (int i = 0; i < Enum.GetNames(typeof(NoteCategory)).Length; i++)
+            {
+                CategoryComboBox.Items.Add(Enum.GetNames(typeof(NoteCategory))[i]);
+            }
             CategoryComboBox.Items.Add("All");
-            CategoryComboBox.SelectedIndex = 7;
-
+            CategoryComboBox.SelectedIndex = CategoryComboBox.Items.Count - 1;
             _listBoxNotes = _project.Notes;
             _listBoxNotes = _project.SortingByEditing(_listBoxNotes);
             UpdateNotesListBox();
