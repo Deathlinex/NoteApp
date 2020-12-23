@@ -39,10 +39,7 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutMainMenuStrip = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.RemoveButton = new System.Windows.Forms.Button();
             this.NotesListBox = new System.Windows.Forms.ListBox();
-            this.EditButton = new System.Windows.Forms.Button();
-            this.AddButton = new System.Windows.Forms.Button();
             this.CategoryComboLabel = new System.Windows.Forms.Label();
             this.CategoryComboBox = new System.Windows.Forms.ComboBox();
             this.InfoPanel = new System.Windows.Forms.Panel();
@@ -53,6 +50,9 @@
             this.CreatedTimeLabel = new System.Windows.Forms.Label();
             this.ModifiedTimeLabel = new System.Windows.Forms.Label();
             this.ModifiedDateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.RemoveButton = new System.Windows.Forms.Button();
+            this.EditButton = new System.Windows.Forms.Button();
+            this.AddButton = new System.Windows.Forms.Button();
             this.MainMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -168,21 +168,6 @@
             this.splitContainer1.SplitterWidth = 3;
             this.splitContainer1.TabIndex = 1;
             // 
-            // RemoveButton
-            // 
-            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.RemoveButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RemoveButton.Image = global::NoteAppUI.Properties.Resources.СancelButton;
-            this.RemoveButton.Location = new System.Drawing.Point(119, 488);
-            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
-            this.RemoveButton.Name = "RemoveButton";
-            this.RemoveButton.Size = new System.Drawing.Size(50, 40);
-            this.RemoveButton.TabIndex = 5;
-            this.RemoveButton.UseVisualStyleBackColor = true;
-            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
-            // 
             // NotesListBox
             // 
             this.NotesListBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -195,36 +180,6 @@
             this.NotesListBox.Size = new System.Drawing.Size(242, 446);
             this.NotesListBox.TabIndex = 2;
             this.NotesListBox.SelectedIndexChanged += new System.EventHandler(this.NotesListBox_SelectedIndexChanged);
-            // 
-            // EditButton
-            // 
-            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EditButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.EditButton.Image = global::NoteAppUI.Properties.Resources.EditButton;
-            this.EditButton.Location = new System.Drawing.Point(65, 488);
-            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
-            this.EditButton.Name = "EditButton";
-            this.EditButton.Size = new System.Drawing.Size(50, 40);
-            this.EditButton.TabIndex = 4;
-            this.EditButton.UseVisualStyleBackColor = true;
-            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
-            // 
-            // AddButton
-            // 
-            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.AddButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
-            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
-            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AddButton.Image = global::NoteAppUI.Properties.Resources.AddButton;
-            this.AddButton.Location = new System.Drawing.Point(11, 488);
-            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddButton.Name = "AddButton";
-            this.AddButton.Size = new System.Drawing.Size(50, 40);
-            this.AddButton.TabIndex = 3;
-            this.AddButton.UseVisualStyleBackColor = true;
-            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // CategoryComboLabel
             // 
@@ -350,6 +305,51 @@
             this.ModifiedDateTimePicker.Name = "ModifiedDateTimePicker";
             this.ModifiedDateTimePicker.Size = new System.Drawing.Size(110, 20);
             this.ModifiedDateTimePicker.TabIndex = 3;
+            // 
+            // RemoveButton
+            // 
+            this.RemoveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.RemoveButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.RemoveButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.RemoveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RemoveButton.Image = global::NoteAppUI.Properties.Resources.Button_Remove;
+            this.RemoveButton.Location = new System.Drawing.Point(153, 491);
+            this.RemoveButton.Margin = new System.Windows.Forms.Padding(2);
+            this.RemoveButton.Name = "RemoveButton";
+            this.RemoveButton.Size = new System.Drawing.Size(35, 35);
+            this.RemoveButton.TabIndex = 5;
+            this.RemoveButton.UseVisualStyleBackColor = true;
+            this.RemoveButton.Click += new System.EventHandler(this.RemoveButton_Click);
+            // 
+            // EditButton
+            // 
+            this.EditButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.EditButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.EditButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.EditButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EditButton.Image = global::NoteAppUI.Properties.Resources.Button_Edit;
+            this.EditButton.Location = new System.Drawing.Point(83, 491);
+            this.EditButton.Margin = new System.Windows.Forms.Padding(2);
+            this.EditButton.Name = "EditButton";
+            this.EditButton.Size = new System.Drawing.Size(35, 35);
+            this.EditButton.TabIndex = 4;
+            this.EditButton.UseVisualStyleBackColor = true;
+            this.EditButton.Click += new System.EventHandler(this.EditButton_Click);
+            // 
+            // AddButton
+            // 
+            this.AddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.AddButton.FlatAppearance.BorderColor = System.Drawing.SystemColors.Control;
+            this.AddButton.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ControlDark;
+            this.AddButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddButton.Image = global::NoteAppUI.Properties.Resources.Button_Add;
+            this.AddButton.Location = new System.Drawing.Point(11, 491);
+            this.AddButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddButton.Name = "AddButton";
+            this.AddButton.Size = new System.Drawing.Size(35, 35);
+            this.AddButton.TabIndex = 3;
+            this.AddButton.UseVisualStyleBackColor = true;
+            this.AddButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // MainForm
             // 

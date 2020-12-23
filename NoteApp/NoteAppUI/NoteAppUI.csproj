@@ -118,6 +118,15 @@
   <ItemGroup>
     <None Include="Resources\СancelButton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Remove.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>RD /S /Q "$(SolutionDir)InstallScripts\Release"</PreBuildEvent>
