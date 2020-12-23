@@ -61,7 +61,7 @@
             this.TitleLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(30, 13);
-            this.TitleLabel.TabIndex = 2;
+            this.TitleLabel.TabIndex = 30;
             this.TitleLabel.Text = "Title:";
             // 
             // CategoryLabel
@@ -71,27 +71,27 @@
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(52, 13);
-            this.CategoryLabel.TabIndex = 3;
+            this.CategoryLabel.TabIndex = 40;
             this.CategoryLabel.Text = "Category:";
             // 
             // CreatedDateLabel
             // 
             this.CreatedDateLabel.AutoSize = true;
-            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 52);
+            this.CreatedDateLabel.Location = new System.Drawing.Point(7, 54);
             this.CreatedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedDateLabel.Name = "CreatedDateLabel";
             this.CreatedDateLabel.Size = new System.Drawing.Size(47, 13);
-            this.CreatedDateLabel.TabIndex = 4;
+            this.CreatedDateLabel.TabIndex = 50;
             this.CreatedDateLabel.Text = "Created:";
             // 
             // ModifiedDateLabel
             // 
             this.ModifiedDateLabel.AutoSize = true;
-            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 52);
+            this.ModifiedDateLabel.Location = new System.Drawing.Point(190, 54);
             this.ModifiedDateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedDateLabel.Name = "ModifiedDateLabel";
             this.ModifiedDateLabel.Size = new System.Drawing.Size(50, 13);
-            this.ModifiedDateLabel.TabIndex = 5;
+            this.ModifiedDateLabel.TabIndex = 60;
             this.ModifiedDateLabel.Text = "Modified:";
             // 
             // CreatedDateTimePicker
@@ -123,7 +123,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.TextBox.Size = new System.Drawing.Size(736, 232);
-            this.TextBox.TabIndex = 8;
+            this.TextBox.TabIndex = 2;
             this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // panel1
@@ -152,7 +152,7 @@
             this.ErrorLabel.Location = new System.Drawing.Point(341, 26);
             this.ErrorLabel.Name = "ErrorLabel";
             this.ErrorLabel.Size = new System.Drawing.Size(75, 17);
-            this.ErrorLabel.TabIndex = 9;
+            this.ErrorLabel.TabIndex = 70;
             this.ErrorLabel.Text = "ErrorLabel";
             this.ErrorLabel.Visible = false;
             // 
@@ -163,7 +163,7 @@
             this.CategoryComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.CategoryComboBox.Name = "CategoryComboBox";
             this.CategoryComboBox.Size = new System.Drawing.Size(110, 21);
-            this.CategoryComboBox.TabIndex = 8;
+            this.CategoryComboBox.TabIndex = 1;
             this.CategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.CategoryComboBox_SelectedIndexChanged);
             // 
             // OKButton
@@ -173,7 +173,7 @@
             this.OKButton.Margin = new System.Windows.Forms.Padding(2);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(90, 25);
-            this.OKButton.TabIndex = 10;
+            this.OKButton.TabIndex = 3;
             this.OKButton.Text = "OK";
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
@@ -185,7 +185,7 @@
             this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(90, 25);
-            this.CancelButton.TabIndex = 11;
+            this.CancelButton.TabIndex = 4;
             this.CancelButton.Text = "Cancel";
             this.CancelButton.UseVisualStyleBackColor = true;
             this.CancelButton.Click += new System.EventHandler(this.CancelButton_Click);

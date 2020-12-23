@@ -266,7 +266,7 @@
             this.InfoPanel.Controls.Add(this.ModifiedDateTimePicker);
             this.InfoPanel.Location = new System.Drawing.Point(5, 5);
             this.InfoPanel.Name = "InfoPanel";
-            this.InfoPanel.Size = new System.Drawing.Size(578, 523);
+            this.InfoPanel.Size = new System.Drawing.Size(579, 523);
             this.InfoPanel.TabIndex = 6;
             // 
             // TitleLabel
@@ -291,7 +291,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.ReadOnly = true;
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(570, 329);
+            this.TextBox.Size = new System.Drawing.Size(571, 401);
             this.TextBox.TabIndex = 0;
             // 
             // CategoryLabel
@@ -321,7 +321,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.CreatedTimeLabel.AutoSize = true;
-            this.CreatedTimeLabel.Location = new System.Drawing.Point(3, 52);
+            this.CreatedTimeLabel.Location = new System.Drawing.Point(3, 53);
             this.CreatedTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CreatedTimeLabel.Name = "CreatedTimeLabel";
             this.CreatedTimeLabel.Size = new System.Drawing.Size(47, 13);
@@ -333,7 +333,7 @@
             this.ModifiedTimeLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ModifiedTimeLabel.AutoSize = true;
-            this.ModifiedTimeLabel.Location = new System.Drawing.Point(174, 52);
+            this.ModifiedTimeLabel.Location = new System.Drawing.Point(174, 53);
             this.ModifiedTimeLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.ModifiedTimeLabel.Name = "ModifiedTimeLabel";
             this.ModifiedTimeLabel.Size = new System.Drawing.Size(50, 13);
