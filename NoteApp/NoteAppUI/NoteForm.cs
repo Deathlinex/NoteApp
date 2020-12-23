@@ -52,23 +52,18 @@ namespace NoteAppUI
             TextBox.Text = _note.Text;
         }
 
-        private void ChangeVisiblePanel(bool isVisible)
-        {
-            ErrorLabel.Visible = isVisible;
-        }
-
         private void TitleTextBox_TextChanged(object sender, EventArgs e)
         {
             try
             {
                 _note.Name = TitleTextBox.Text;
                 TitleTextBox.BackColor = Color.White;
-                ChangeVisiblePanel(false);
+                ErrorLabel.Visible = false;
             }
             catch (Exception)
             {
                 TitleTextBox.BackColor = Color.IndianRed;
-                ChangeVisiblePanel(true);
+                ErrorLabel.Visible = true;
                 ErrorLabel.Text = "Maximum 50 characters!";
             }
         }

@@ -17,9 +17,10 @@ namespace NoteAppUI
             InitializeComponent();
             _project = ProjectManager.LoadFromFile(ProjectManager._defaultPath);
 
-            for (int i = 0; i < Enum.GetNames(typeof(NoteCategory)).Length; i++)
+            string[] CategoryNames = Enum.GetNames(typeof(NoteCategory));
+            for (int i = 0; i < CategoryNames.Length; i++)
             {
-                CategoryComboBox.Items.Add(Enum.GetNames(typeof(NoteCategory))[i]);
+                CategoryComboBox.Items.Add(CategoryNames[i]);
             }
             CategoryComboBox.Items.Add("All");
             CategoryComboBox.SelectedIndex = CategoryComboBox.Items.Count - 1;
@@ -35,7 +36,7 @@ namespace NoteAppUI
         private void UpdateNotesListBox()
         {
             _listBoxNotes = _project.Notes;
-            if (CategoryComboBox.SelectedIndex != 7)
+            if (CategoryComboBox.SelectedIndex != CategoryComboBox.Items.Count -1)
             {
                 _listBoxNotes = _project.SortingByEditing(_listBoxNotes, (NoteCategory) CategoryComboBox.SelectedIndex);
             }
@@ -86,7 +87,7 @@ namespace NoteAppUI
             }
             catch (Exception)
             {
-                ChangeVisiblePanel(false);
+                InfoPanel.Visible = false;
                 return;
             }
         }
@@ -159,19 +160,11 @@ namespace NoteAppUI
                     NotesListBox.SelectedIndex = 0;
                 }
             }
-            ChangeVisiblePanel(false);
+            InfoPanel.Visible = false;
             ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
 
-        /// <summary>
-        /// Изменение видимости информации на главной форме.
-        /// </summary>
-        private void ChangeVisiblePanel(bool isVisible)
-        {
-            InfoPanel.Visible = isVisible;
-        }
-
-        /// <summary>
+       /// <summary>
         /// Обработка события выбора заметки из списка.
         /// </summary>
         private void NotesListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -191,7 +184,7 @@ namespace NoteAppUI
                 CreatedDateTimePicker.Value = selectedSortedNote.TimeOfCreation;
                 ModifiedDateTimePicker.Value = selectedSortedNote.TimeOfEdit;
                 TextBox.Text = selectedSortedNote.Text;
-                ChangeVisiblePanel(true);
+                InfoPanel.Visible = true;
             }
             catch
             {
