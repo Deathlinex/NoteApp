@@ -67,7 +67,7 @@
             // CategoryLabel
             // 
             this.CategoryLabel.AutoSize = true;
-            this.CategoryLabel.Location = new System.Drawing.Point(7, 30);
+            this.CategoryLabel.Location = new System.Drawing.Point(7, 29);
             this.CategoryLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CategoryLabel.Name = "CategoryLabel";
             this.CategoryLabel.Size = new System.Drawing.Size(52, 13);
@@ -106,7 +106,7 @@
             // ModifiedDateTimePicker
             // 
             this.ModifiedDateTimePicker.Enabled = false;
-            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(244, 50);
+            this.ModifiedDateTimePicker.Location = new System.Drawing.Point(244, 51);
             this.ModifiedDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.ModifiedDateTimePicker.Name = "ModifiedDateTimePicker";
             this.ModifiedDateTimePicker.Size = new System.Drawing.Size(110, 20);
@@ -122,7 +122,7 @@
             this.TextBox.Multiline = true;
             this.TextBox.Name = "TextBox";
             this.TextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.TextBox.Size = new System.Drawing.Size(736, 232);
+            this.TextBox.Size = new System.Drawing.Size(736, 233);
             this.TextBox.TabIndex = 2;
             this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
@@ -169,7 +169,7 @@
             // OKButton
             // 
             this.OKButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.OKButton.Location = new System.Drawing.Point(562, 325);
+            this.OKButton.Location = new System.Drawing.Point(562, 327);
             this.OKButton.Margin = new System.Windows.Forms.Padding(2);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(90, 25);
@@ -181,7 +181,7 @@
             // CancelButton
             // 
             this.CancelButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.CancelButton.Location = new System.Drawing.Point(656, 325);
+            this.CancelButton.Location = new System.Drawing.Point(656, 327);
             this.CancelButton.Margin = new System.Windows.Forms.Padding(2);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(90, 25);

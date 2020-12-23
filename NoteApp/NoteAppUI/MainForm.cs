@@ -124,8 +124,11 @@ namespace NoteAppUI
                 if (NotesListBox.Items.Count != 0)
                 {
                     NotesListBox.SelectedIndex = 0;
+                }else
+                {
+                    InfoPanel.Visible = false;
                 }
-                _project.CurrentNoteIndex = NotesListBox.SelectedIndex;
+               _project.CurrentNoteIndex = NotesListBox.SelectedIndex;
             }
             else return;
 
@@ -159,8 +162,8 @@ namespace NoteAppUI
                 {
                     NotesListBox.SelectedIndex = 0;
                 }
+                InfoPanel.Visible = false;
             }
-            InfoPanel.Visible = false;
             ProjectManager.SaveToFile(_project, ProjectManager._defaultPath);
         }
 
